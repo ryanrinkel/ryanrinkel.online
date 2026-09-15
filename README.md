@@ -17,7 +17,6 @@ Static HTML and CSS. No build step, no dependencies, no JavaScript beyond two li
 | `r/_template/` | Template to copy for a new tailored résumé. Published like everything else — see the note below. |
 | `r/<role>/` | One tailored résumé per role type, e.g. `r/devrel/`. |
 | `404.html` | Not-found page. Wired up as the app's `error_document`. |
-| `.do/app.yaml` | Reference copy of the App Platform spec. Not read automatically. |
 
 ## Two kinds of visitor
 
@@ -66,7 +65,15 @@ python -m http.server 8000
 ## Deploying
 
 DigitalOcean App Platform, as a **static site** component pointed at this repo's `main` branch
-with deploy-on-push enabled. Pushing to `main` is the deploy.
+with deploy-on-push enabled. Pushing to `main` is the deploy. There is deliberately no
+`.do/app.yaml` in this repo — App Platform reads that file when a repo is connected, and a stale
+copy of it will quietly hand a newly created app the wrong name, domain, or output directory.
+The app is configured in the DO console, and the console is the single source of truth.
+
+`ryanrinkel.online` is **registered at Bluehost but delegated to DigitalOcean's nameservers**
+(`ns1/ns2/ns3.digitalocean.com`). DNS records are therefore edited in the DigitalOcean control
+panel, not Bluehost's. Editing DNS at Bluehost has no effect unless the nameservers are moved
+back there first.
 
 `hireme.ryanrinkel.online` is a DNS `CNAME` to the app's `*.ondigitalocean.app` hostname, and
 DigitalOcean terminates TLS. Because the domain is attached to the app rather than to a host
