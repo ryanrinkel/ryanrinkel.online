@@ -1,0 +1,321 @@
+/* ==========================================================================
+   Resume page. Layers on top of style.css.
+   Screen: dark, matches the portfolio. Print: black on white, tight, no chrome.
+   ========================================================================== */
+
+.resume {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 3.5rem 1.75rem 4rem;
+}
+
+/* --- Masthead ------------------------------------------------------------ */
+
+.r-head {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.75rem;
+    margin-bottom: 2.25rem;
+}
+
+.r-head h1 {
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    letter-spacing: -0.035em;
+    font-weight: 650;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.r-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.1rem;
+}
+
+.r-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.4rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+.r-contact a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-lit);
+    transition: color var(--ease), border-color var(--ease);
+}
+.r-contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* --- Summary ------------------------------------------------------------- */
+
+.r-summary {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+}
+.r-summary strong { color: var(--text); font-weight: 550; }
+
+/* --- Sections ------------------------------------------------------------ */
+
+/* The landing page gives every <section> 5rem of padding. The resume doesn't
+   want it — its rhythm comes from margins so the print stylesheet can tighten it. */
+.resume section { padding: 0; }
+
+.r-section { margin-bottom: 2.5rem; }
+
+.r-section > h2 {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dim);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* --- Entries ------------------------------------------------------------- */
+
+.r-entry { margin-bottom: 1.9rem; }
+.r-entry:last-child { margin-bottom: 0; }
+
+.r-entry-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.2rem 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.r-entry h3 {
+    font-size: 1.05rem;
+    font-weight: 620;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+}
+.r-entry h3 .at { color: var(--muted); font-weight: 400; }
+
+.r-when {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--dim);
+    white-space: nowrap;
+}
+
+.r-sub {
+    font-size: 0.86rem;
+    color: var(--dim);
+    margin-bottom: 0.7rem;
+}
+.r-sub a { color: var(--accent); text-decoration: none; }
+.r-sub a:hover { text-decoration: underline; }
+
+/* One-line description under an entry heading */
+.r-blurb {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+}
+
+/* Arrow glyphs aren't in every webfont; give them a symbol fallback so they
+   don't degrade into hyphens when the page is printed. */
+.glyph {
+    font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", var(--font-body);
+}
+
+.r-entry ul {
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+}
+.r-entry li {
+    position: relative;
+    padding-left: 1.1rem;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--muted);
+}
+.r-entry li::before {
+    content: "";
+    position: absolute;
+    left: 0.1rem;
+    top: 0.65em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.6;
+}
+.r-entry li strong { color: var(--text); font-weight: 550; }
+.r-entry li em { color: var(--text); font-style: italic; }
+
+/* Featured project gets a subtle frame on screen */
+.r-featured {
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--card);
+    padding: 1.5rem 1.6rem;
+}
+
+/* --- Skills -------------------------------------------------------------- */
+
+.r-skills { display: grid; gap: 1rem; }
+
+.r-skill-row {
+    display: grid;
+    grid-template-columns: 12.5rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+}
+.r-skill-row dt {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text);
+}
+.r-skill-row dd {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* --- Print toolbar ------------------------------------------------------- */
+
+.r-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.r-toolbar .hint {
+    font-size: 0.82rem;
+    color: var(--dim);
+    align-self: center;
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+
+@media (max-width: 680px) {
+    .resume { padding: 2.5rem 1.25rem 3rem; }
+    .r-skill-row { grid-template-columns: 1fr; gap: 0.25rem; }
+    .r-featured { padding: 1.25rem 1.1rem; }
+    .r-when { font-size: 0.72rem; }
+}
+
+/* ==========================================================================
+   PRINT — this is the PDF.
+   ========================================================================== */
+
+@page {
+    size: letter;
+    margin: 0.5in 0.62in;
+}
+
+@media print {
+    :root {
+        --text:  #111111;
+        --muted: #2e2e2e;
+        --dim:   #5a5a5a;
+        --accent: #b4553a;
+        --border: #cfcfcf;
+        --border-lit: #cfcfcf;
+        --card: transparent;
+    }
+
+    html, body {
+        background: #ffffff !important;
+        color: #111111 !important;
+        font-size: 10.2pt;
+        line-height: 1.42;
+    }
+
+    /* Strip the site chrome */
+    .nav, .r-toolbar, .skip-link, .contact, .colophon { display: none !important; }
+
+    .resume {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a { color: #111111 !important; text-decoration: none !important; border: 0 !important; }
+
+    .r-head {
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.85rem;
+        border-bottom: 1.5pt solid #111111;
+    }
+    .r-head h1 { font-size: 21pt; margin-bottom: 0.1rem; }
+    .r-title {
+        font-size: 8pt;
+        letter-spacing: 0.1em;
+        color: #b4553a !important;
+        margin-bottom: 0.45rem;
+    }
+    .r-contact { font-size: 8.6pt; gap: 0.15rem 0.9rem; color: #2e2e2e !important; }
+
+    .r-summary {
+        font-size: 9.6pt;
+        line-height: 1.45;
+        margin-bottom: 0.95rem;
+        color: #2e2e2e !important;
+    }
+
+    .r-section { margin-bottom: 0.95rem; }
+    .r-section > h2 {
+        font-size: 8.2pt;
+        letter-spacing: 0.14em;
+        color: #111111 !important;
+        border-bottom: 0.75pt solid #999999;
+        padding-bottom: 0.15rem;
+        margin-bottom: 0.55rem;
+    }
+
+    .r-entry { margin-bottom: 0.72rem; }
+    .r-entry h3 { font-size: 10.4pt; }
+    .r-when { font-size: 8.4pt; color: #5a5a5a !important; }
+    .r-sub { font-size: 8.4pt; margin-bottom: 0.28rem; color: #5a5a5a !important; }
+    .r-blurb { font-size: 9.4pt; line-height: 1.4; margin-bottom: 0.3rem; color: #2e2e2e !important; }
+
+    .r-entry ul { gap: 0.18rem; }
+    .r-entry li {
+        font-size: 9.5pt;
+        line-height: 1.4;
+        padding-left: 0.78rem;
+        color: #2e2e2e !important;
+    }
+    .r-entry li::before {
+        width: 3px; height: 3px; top: 0.6em; left: 0.1rem;
+        background: #777777 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .r-featured {
+        border: 0;
+        border-left: 2pt solid #b4553a;
+        border-radius: 0;
+        background: transparent;
+        padding: 0 0 0 0.6rem;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .r-skills { gap: 0.3rem; }
+    .r-skill-row { grid-template-columns: 10.5rem 1fr; gap: 0.6rem; }
+    .r-skill-row dt { font-size: 9pt; }
+    .r-skill-row dd { font-size: 9pt; line-height: 1.4; color: #2e2e2e !important; }
+
+    /* Keep entries from splitting across pages */
+    .r-entry, .r-skill-row { break-inside: avoid; page-break-inside: avoid; }
+    .r-section > h2 { break-after: avoid; page-break-after: avoid; }
+}

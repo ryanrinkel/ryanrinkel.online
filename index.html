@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ryan Rinkel — Developer Relations &amp; AI Tooling</title>
+<meta name="description" content="Developer relations and technical content. I build AI developer tools — Claudot (Claude Code inside Godot), LLM content pipelines, and training-data tooling — and write the docs, demos, and stories around them.">
+<link rel="canonical" href="https://hireme.ryanrinkel.online/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ryan Rinkel — Developer Relations &amp; AI Tooling">
+<meta property="og:description" content="I build AI developer tools and the docs, demos, and stories around them.">
+<meta property="og:url" content="https://hireme.ryanrinkel.online/">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230e0e12'/><text y='.9em' x='50%25' text-anchor='middle' font-size='62' font-family='monospace' fill='%23e07a5f'>R</text></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#work">Skip to work</a>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-name" href="/">Ryan Rinkel<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about" class="hide-sm">About</a>
+      <a href="https://github.com/ryanrinkel" class="hide-sm" rel="me noopener">GitHub</a>
+      <a href="resume.html" class="cta">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="wrap">
+    <p class="hero-role">Developer Relations · Technical Content · Community</p>
+    <h1>I build AI developer tools —<br>and the story around them.</h1>
+    <p class="hero-lede">
+      Shipping <strong>Claudot</strong>, a Claude Code integration for the Godot engine, taught me
+      the whole job: the MCP tools, the bridge daemon, the docs, the trailer, the brand.
+    </p>
+    <p class="hero-sub">
+      Fifteen years of writing and producing before that — off-Broadway theater, then League of
+      Legends content seen by hundreds of millions of players. Now I point all of it at helping
+      developers get real work done with AI.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="resume.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Read the résumé
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/ryanrinkel" rel="me noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Browse the code
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== FEATURED ===================== -->
+<section id="work">
+  <div class="wrap">
+    <p class="eyebrow">Featured</p>
+
+    <article class="featured">
+      <div class="featured-head">
+        <h3>Claudot</h3>
+        <span class="featured-tag">Solo creator</span>
+      </div>
+      <p class="featured-meta">2025–present · Source-available · Python + GDScript · Godot 4.2+</p>
+
+      <p class="featured-lede">
+        Claude Code, docked inside the Godot editor. Chat with an AI that can actually see your
+        project: inspect the scene tree, modify nodes, run the game, capture screenshots, and read
+        the debugger — without ever leaving the editor.
+      </p>
+
+      <ul class="featured-points">
+        <li>
+          Authored <strong>20 custom MCP tools</strong> covering scene inspection and modification,
+          screenshot capture, and GUT test execution — so Claude can write code, run it,
+          <em>see the result</em>, and iterate. It doubles as a working reference for extending
+          Claude Code into a new developer environment.
+        </li>
+        <li>
+          Shipped a <strong>Python↔GDScript bridge daemon</strong> and a dockable editor chat panel
+          with slash commands, <code>@</code> file references, and persistent history.
+        </li>
+        <li>
+          Multi-provider by design: Claude Code and the OpenAI Codex CLI, plus bring-your-own-key
+          access to the Anthropic API, OpenAI, OpenRouter, and any OpenAI-compatible endpoint
+          (Ollama, LM Studio).
+        </li>
+        <li>
+          Owned the <strong>entire developer experience</strong> end to end — zero-terminal install,
+          onboarding flow, documentation, sample workflows, UX copy, marketing site, launch trailer,
+          and visual identity.
+        </li>
+      </ul>
+
+      <ul class="tags">
+        <li>Python</li><li>GDScript</li><li>MCP</li><li>Claude Code</li>
+        <li>Godot 4</li><li>Daemon / IPC</li><li>Editor plugin</li><li>GUT</li>
+      </ul>
+
+      <div class="proj-links">
+        <a href="https://claudotcode.com" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          claudotcode.com
+        </a>
+        <a href="https://github.com/Claudot-Code/claudot-pub" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          Source
+        </a>
+        <span class="stars" title="GitHub stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.6 17 14.5 18.2 21.5 12 18.2 5.8 21.5 7 14.5 2 9.6 8.9 8.6 12 2"/></svg>
+          7 stars
+        </span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== GRID ===================== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+
+    <div class="grid">
+
+      <!-- BLANK the spire -->
+      <article class="card">
+        <div class="card-head">
+          <h3>BLANK the spire</h3>
+        </div>
+        <p class="card-meta">C# · Python · Flask · Slay the Spire 2</p>
+        <p>
+          Forge a playable <em>Slay the Spire 2</em> character class from a single sentence. Three
+          pieces working together: a <strong>data-driven C# mod runtime</strong> (Harmony + the
+          community SDK) that turns a class defined as pure data into a real character, a
+          <strong>multi-stage LLM generation pipeline</strong> that writes cards, relics, and
+          mechanics, and a Flask site that ships it to players.
+        </p>
+        <p>
+          The interesting constraint: generated content has to be <strong>guaranteed playable</strong>.
+          A published card/relic/status vocabulary bounds what the model may invent, and schema
+          validation rejects anything the runtime can't execute.
+        </p>
+        <ul class="tags">
+          <li>C#</li><li>Harmony</li><li>Python</li><li>LLM pipeline</li>
+          <li>Schema validation</li><li>Flask</li>
+        </ul>
+        <div class="proj-links">
+          <a href="https://blankthespire.com" rel="noopener">Live site</a>
+          <a href="https://github.com/ryanrinkel/BLANKthespire" rel="noopener">Source</a>
+        </div>
+      </article>
+
+      <!-- Holmes -->
+      <article class="card">
+        <div class="card-head">
+          <h3>Holmes</h3>
+          <span class="badge badge-private">Private</span>
+        </div>
+        <p class="card-meta">Python · spaCy · LLM orchestration</p>
+        <p>
+          Point it at a pile of text, name a character, and get back a structured bundle for teaching
+          an LLM to play them: dialogue pairs, memories, a voice profile, relationships, reputation,
+          and chat-format JSONL ready for training.
+        </p>
+        <p>
+          Format-agnostic on both axes — <strong>PDF, DOCX, plain text, JSON</strong> going in, and
+          <strong>novels, screenplays, historical documents</strong> as the kind of thing it reads.
+          The design principle is the cost story: <em>code reads everything; the model reads only
+          what requires comprehension.</em> Parsing, quote extraction, and vocabulary statistics are
+          deterministic and free; the paid stage touches only the scenes the character appears in,
+          once.
+        </p>
+        <ul class="tags">
+          <li>Python 3.11</li><li>spaCy</li><li>NLP</li><li>OCR</li>
+          <li>Training data</li><li>CLI</li>
+        </ul>
+        <p class="card-note">Private repo — happy to walk through the architecture.</p>
+      </article>
+
+      <!-- Trainything -->
+      <article class="card">
+        <div class="card-head">
+          <h3>Trainything</h3>
+          <span class="badge badge-wip">In progress</span>
+        </div>
+        <p class="card-meta">Human-in-the-loop tooling</p>
+        <p>
+          Most teams know they need humans in their training and feedback loops. What stops them is
+          the plumbing: wiring up review queues, collecting judgments in a usable shape, and getting
+          that signal back into the model.
+        </p>
+        <p>
+          Trainything is the tool I want to exist for that — <strong>get humans into the loop as
+          quickly and effectively as possible</strong>, so the bottleneck goes back to being the
+          quality of the judgment rather than the cost of collecting it.
+        </p>
+        <ul class="tags">
+          <li>Evals</li><li>RLHF / feedback loops</li><li>Annotation UX</li>
+        </ul>
+        <p class="card-note">Early stage — in active development.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow">Background</p>
+    <div class="about-grid">
+      <div>
+        <p>
+          I came to developer tooling the long way around. Before I was writing MCP servers I was
+          writing scripts — for theater, then for video, then for games.
+        </p>
+        <p>
+          That turns out to matter more than I expected. <strong>The hard part of developer relations
+          isn't the demo, it's the explanation</strong>: figuring out what a developer already knows,
+          where they'll get stuck, and what order the ideas need to arrive in. I spent fifteen years
+          learning that in front of live audiences and at League of Legends scale, and now I get to
+          apply it to tools I also build.
+        </p>
+        <p>
+          These days I work in an agentic coding workflow of my own design, every day — which means
+          I have hands-on, unsentimental opinions about where Claude Code shines and where developers
+          actually get stuck.
+        </p>
+        <p>
+          Based in San Francisco. Organized a GDC meetup on AI in games.
+        </p>
+      </div>
+      <ul class="track">
+        <li>
+          <span class="yr">2024–now</span>
+          <span class="what"><b>Story Games</b><span>Creative Director — generative AI practice, prompt-engineering standards, character LoRAs, ElevenLabs partnership</span></span>
+        </li>
+        <li>
+          <span class="yr">2019–2024</span>
+          <span class="what"><b>Riot Games</b><span>Writer &amp; Content Producer — League of Legends video seen by hundreds of millions; shipped <em>Tellstones: King's Gambit</em></span></span>
+        </li>
+        <li>
+          <span class="yr">2010–2019</span>
+          <span class="what"><b>The Puppet Shakespeare Players</b><span>Founder &amp; Creative Lead — nine-year off-Broadway run; <em>Puppet Titus Andronicus</em> was a New York Times Critics' Pick</span></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<footer class="contact">
+  <div class="wrap">
+    <h2>Let's talk.</h2>
+    <p>
+      I'm looking for developer relations and technical content work — ideally somewhere I can keep
+      building the thing I'm explaining.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:ryan.r.rinkel@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        ryan.r.rinkel@gmail.com
+      </a>
+      <a href="tel:+13478507668">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        347.850.7668
+      </a>
+      <a href="https://github.com/ryanrinkel" rel="me noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        github.com/ryanrinkel
+      </a>
+      <a href="resume.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Résumé
+      </a>
+    </div>
+    <div class="colophon">
+      <span>Built by hand — static HTML, one stylesheet, no build step.</span>
+      <span>© <span id="yr">2026</span> Ryan Rinkel</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
