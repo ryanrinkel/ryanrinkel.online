@@ -19,5 +19,8 @@ Copy this whole folder to `r/<role>/` and edit its `index.html`.
 - The `../../css/` links in `<head>` — they're what make this match the rest of the site.
 - `<meta name="robots" content="noindex">` — keeps tailored versions out of search results.
 
-The leading underscore hides this folder from the published site (Jekyll skips `_`-prefixed
-directories), so the template itself never goes live.
+**The leading underscore does not hide this folder.** It did under GitHub Pages, where Jekyll
+skipped `_`-prefixed directories. The site is on DigitalOcean App Platform now, which publishes
+the source directory as-is — so `/r/_template/` is live and reachable. The underscore is now just
+a signal to you that this isn't a real role. Keep the `noindex`, and don't leave anything in here
+you wouldn't publish.

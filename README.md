@@ -4,7 +4,7 @@ Personal site for Ryan Rinkel. A code portfolio on the landing page, a résumé 
 and per-role tailored résumés for job applications.
 
 Static HTML and CSS. No build step, no dependencies, no JavaScript beyond two lines
-(a copyright year and a print button). Deployed with GitHub Pages.
+(a copyright year and a print button). Deployed on DigitalOcean App Platform.
 
 ## Layout
 
@@ -14,9 +14,10 @@ Static HTML and CSS. No build step, no dependencies, no JavaScript beyond two li
 | `resume.html` | The résumé. Dark on screen, black-on-white when printed. |
 | `css/style.css` | Shared design tokens, nav, cards, footer. Used by every page. |
 | `css/resume.css` | Résumé-specific layout **and the print stylesheet** (this is what makes the PDF). |
-| `r/_template/` | Template to copy for a new tailored résumé. Hidden from the built site by Jekyll (leading `_`). |
+| `r/_template/` | Template to copy for a new tailored résumé. Published like everything else — see the note below. |
 | `r/<role>/` | One tailored résumé per role type, e.g. `r/devrel/`. |
-| `CNAME` | Custom domain for GitHub Pages. |
+| `404.html` | Not-found page. Wired up as the app's `error_document`. |
+| `.do/app.yaml` | Reference copy of the App Platform spec. Not read automatically. |
 
 ## Two kinds of visitor
 
@@ -46,10 +47,16 @@ editing is just finding the text and changing it.
 The template is already wired to `../../css/`, so it picks up the shared styles and the print
 stylesheet automatically. It carries `noindex` so tailored versions stay out of search results.
 
+**On the leading underscore.** It's a leftover from GitHub Pages, where Jekyll skipped
+`_`-prefixed directories and the template never shipped. App Platform has no Jekyll: it publishes
+the source directory as-is, so `/r/_template/` *is* reachable on the live site. It carries
+`noindex`, and it holds nothing but an empty résumé shell, so this is untidy rather than a leak —
+but don't put anything in there you wouldn't publish.
+
 ## Run it locally
 
-No tooling required — open `index.html` in a browser. To check relative paths the way GitHub
-Pages serves them:
+No tooling required — open `index.html` in a browser. To check root-relative paths (`/css/…`,
+which `404.html` uses) the way the app serves them:
 
 ```bash
 python -m http.server 8000
@@ -58,9 +65,16 @@ python -m http.server 8000
 
 ## Deploying
 
-GitHub Pages, served from the default branch. The custom domain lives in `CNAME`; point a DNS
-`CNAME` record for that subdomain at `ryanrinkel.github.io`, then enable **Enforce HTTPS** in
-the repo's Pages settings once the certificate is issued.
+DigitalOcean App Platform, as a **static site** component pointed at this repo's `main` branch
+with deploy-on-push enabled. Pushing to `main` is the deploy.
+
+`hireme.ryanrinkel.online` is a DNS `CNAME` to the app's `*.ondigitalocean.app` hostname, and
+DigitalOcean terminates TLS. Because the domain is attached to the app rather than to a host
+inferred from a file, there is **no `CNAME` file in this repo** — that file is a GitHub Pages
+convention and does nothing here.
+
+To watch a deploy: DO console → Apps → the app → **Activity**. To roll back, redeploy an earlier
+commit from that same tab.
 
 ## History
 
